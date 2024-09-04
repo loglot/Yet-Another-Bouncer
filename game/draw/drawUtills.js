@@ -122,10 +122,10 @@ export class DrawUtils {
         ctx.fillStyle = "#000000";
         ctx.fill();
         ctx.closePath();
-        draw.Circ(20, "black", 20, 20, "no")
-        draw.Circ(20, "black", 1656, 20, "no")
-        draw.Circ(20, "black", 20, 898, "no")
-        draw.Circ(20, "black", 1656, 898, "no")
+        this.Circle(20, 20, 20, "black")
+        this.Circle(1656, 20, 20, "black")
+        this.Circle(20, 898, 20, "black")
+        this.Circle(1656, 898, 20, "black")
   
   
         ctx.beginPath();
@@ -134,5 +134,7 @@ export class DrawUtils {
         ctx.fill();
         ctx.closePath();
     }
+
+    
 
 }

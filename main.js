@@ -1,5 +1,13 @@
-import { Game } from "./game/imports";
+import { Game } from "./game/imports.js";
 
 var game = new Game()
 
-game.display.draw()
+
+function Start(){
+Tick()
+}
+function Tick(){
+    game.display.draw()
+requestAnimationFrame(Tick)
+}
+Start()

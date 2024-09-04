@@ -1,17 +1,23 @@
 const canvas = document.getElementById("game_screen");
 const ctx = canvas.getContext("2d");
+var originalWidth = 1676
+var originalHeight = 918
+var scaleX = 0;
+var scaleY = 0;
 
 export class Display {
     game
-    draw
+    drawer
+    originalWidth = 1676
+    originalHeight = 918
     constructor(Game){
         this.game = Game
-        this.draw = game.drawUtills
+        this.drawer = this.game.drawUtils
     }
     
     draw(){
-        ///this.resizeCanvasForWindowSize()
-        this.draw.Rect(x = 0, y = 0, width = 500, height = 500)//ArcadeBG()
+        this.resizeCanvasForWindowSize()
+        this.drawer.ArcadeBG()
     }
 
 
