@@ -110,4 +110,29 @@ export class DrawUtils {
         drawingTool.closePath();
     }
 
+    ArcadeBG() {
+
+        ctx.beginPath();
+        ctx.rect(0, 20, 1676, 878);
+        ctx.fillStyle = "#000000";
+        ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.rect(20, 0, 1636, 918);
+        ctx.fillStyle = "#000000";
+        ctx.fill();
+        ctx.closePath();
+        draw.Circ(20, "black", 20, 20, "no")
+        draw.Circ(20, "black", 1656, 20, "no")
+        draw.Circ(20, "black", 20, 898, "no")
+        draw.Circ(20, "black", 1656, 898, "no")
+  
+  
+        ctx.beginPath();
+        ctx.rect(20, 20, 1636, 878);
+        ctx.fillStyle = "#90b0c0";
+        ctx.fill();
+        ctx.closePath();
+    }
+
 }
