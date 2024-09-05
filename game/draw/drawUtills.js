@@ -5,58 +5,101 @@ const ctx = canvas.getContext("2d");
 
 export class DrawUtils {
     
-    Bean(x, y, width, height, color) {
+    Bean(x, y, width, height, color,HV = "V") {
 
         ctx.beginPath();
-        ctx.arc(x - 10, (y + 10) - (height / 2), width / 2 +5, 0, ( Math.PI/180 ) * 180, ( Math.PI/180 ) * 180,  false);
+        ctx.rect((x - 5) - (width / 2), y - (height / 2) + 10, width - height / 2 , height);
         ctx.fillStyle = "rgba(0, 0, 0, .2)";
         ctx.fill();
-        ctx.closePath();
+        ctx.closePath();   
+
+        if(HV == "V"){
+            ctx.beginPath();
+            ctx.arc(x - 10, (y + (height - (width / 2)) + 10) - (height / 2), width / 2 +5, 0, Math.PI, false);
+            ctx.fill();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.arc(x - 10, (y + 10) - (height / 2), width / 2 +5, 0, ( Math.PI/180 ) * 180, ( Math.PI/180 ) * 180,  false);
+            ctx.fill();
+            ctx.closePath();
+     
+        }
+        if(HV == "H"){
+            ctx.beginPath();
+            ctx.arc((x + (width - (height/2)) -5) - (width/2), y +5, height / 2 +5, Math.PI*1.5, Math.PI/2, false);
+            ctx.fill();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.arc((x - 5) - (width/2), (y + 5), height / 2 +5, Math.PI*.5, Math.PI*1.5, false);
+            ctx.fillStyle = "rgba(0, 0, 0, .2)";
+            ctx.fill();
+            ctx.closePath();
+      
+        }
+
+
 
         ctx.beginPath();
-        ctx.arc(x - 10, (y + (height - (width / 2)) + 10) - (height / 2), width / 2 +5, 0, Math.PI, false);
-        ctx.fill();
-        ctx.closePath();
-
-        ctx.beginPath();
-        ctx.rect((x - 15) - (width / 2), y - (height / 2) + 10, width + 10 , height - width / 2 );
-        ctx.fill();
-        ctx.closePath();    
-
-
-        ctx.beginPath();
-        ctx.rect((x - 5) - (width / 2) , (y - 5) - (height / 2), width + 10 , height - width / 2 + 10);
+        ctx.rect((x - 5) - (width / 2) , (y - 5) - (height / 2), width - height / 2 + 10 , height  + 10);
         ctx.fillStyle = "#33363f";
         ctx.fill();
         ctx.closePath();
 
-        ctx.beginPath();
-        ctx.arc(x, (y + (height - (width / 2))) - (height / 2) , width / 2 + 5, 0, Math.PI * 2, false);
-        ctx.fill();
-        ctx.closePath();
+        if(HV == "V"){
+            ctx.beginPath();
+            ctx.arc(x, (y + (height - (width / 2))) - (height / 2) , width / 2 + 5, 0, Math.PI * 2, false);
+            ctx.fill();
+            ctx.closePath();
 
-        ctx.beginPath();
-        ctx.arc(x, y - (height / 2), width / 2 +5, 0, Math.PI * 2, false);
-        ctx.fill();
-        ctx.closePath();
+            ctx.beginPath();
+            ctx.arc(x, y - (height / 2), width / 2 +5, 0, Math.PI * 2, false);
+            ctx.fill();
+            ctx.closePath();
+        }
+        if(HV == "H"){
+            ctx.beginPath();
+            ctx.arc((x+(width-(height/2))) - (width/2), y , height / 2 + 5, 0, Math.PI * 2, false);
+            ctx.fill();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.arc(x - (width / 2), y, height / 2 +5, 0, Math.PI * 2, false);
+            ctx.fill();
+            ctx.closePath();
+        }
 
         // Draw inside color of bean
 
         ctx.beginPath();
-        ctx.rect(x - (width / 2), y - (height / 2), width, height - width / 2);
+        ctx.rect(x - (width / 2), y - (height / 2), width - height / 2, height);
         ctx.fillStyle = color;
         ctx.fill();
         ctx.closePath();
 
-        ctx.beginPath();
-        ctx.arc(x, (y + (height - (width / 2))) - (height / 2), width / 2, 0, Math.PI * 2, false);
-        ctx.fill();
-        ctx.closePath();
+        if(HV == "V"){
+            ctx.beginPath();
+            ctx.arc(x, (y + (height - (width / 2))) - (height / 2), width / 2, 0, Math.PI * 2, false);
+            ctx.fill();
+            ctx.closePath();
 
-        ctx.beginPath();
-        ctx.arc(x, y - (height / 2), width / 2, 0, Math.PI * 2, false);
-        ctx.fill();
-        ctx.closePath();
+            ctx.beginPath();
+            ctx.arc(x, y - (height / 2), width / 2, 0, Math.PI * 2, false);
+            ctx.fill();
+            ctx.closePath();
+        }
+        if(HV == "H"){
+            ctx.beginPath();
+            ctx.arc((x+(width-(height/2))) - (width/2), y, height / 2, 0, Math.PI * 2, false);
+            ctx.fill();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.arc(x - (width / 2), y, height / 2, 0, Math.PI * 2, false);
+            ctx.fill();
+            ctx.closePath();
+        }
         
     }
 

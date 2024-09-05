@@ -10,6 +10,7 @@ export class Display {
     drawer
     originalWidth = 1676
     originalHeight = 918
+    rotateTest = 0
     constructor(Game){
         this.game = Game
         this.drawer = this.game.drawUtils
@@ -18,6 +19,11 @@ export class Display {
     draw(){
         this.resizeCanvasForWindowSize()
         this.drawer.ArcadeBG()
+        ctx.translate(this.game.player.x, this.game.player.y)
+        ctx.rotate(-this.game.player.diffX / 900)
+        this.drawer.Bean(20, 0, 200, 50, "#afbfaf", "H")
+        ctx.translate(0, 0)
+        ctx.rotate(0)
     }
 
 

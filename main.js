@@ -7,6 +7,8 @@ function Start(){
 Tick()
 }
 function Tick(){
+    game.key.update()
+    game.player.update()
     game.display.draw()
 requestAnimationFrame(Tick)
 }
