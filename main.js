@@ -7,9 +7,20 @@ function Start(){
 Tick()
 }
 function Tick(){
+    if(game.vars.title){
+
+    } else {
+        game.player.update()
+        game.ball.update()
+    }
+    
     game.key.update()
-    game.player.update()
     game.display.draw()
-requestAnimationFrame(Tick)
+
+    if(game.key.wasKeyJustPressed("KeyW")){
+        game.vars.title = false
+    }
+
+    requestAnimationFrame(Tick)
 }
 Start()
