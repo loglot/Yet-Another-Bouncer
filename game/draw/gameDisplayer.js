@@ -23,9 +23,19 @@ export class Display {
         if(this.game.vars.title){
             this.drawer.Text("Yet Another Bouncer", 250, 200)
             this.drawer.Text("Press W To Start", 260, 350)
+            
+          this.drawer.Text(this.game.vars.score, 270, 500)
+          this.drawer.Text(this.game.vars.highScore, 770, 500)
         } else {
             this.drawer.Circle(this.game.ball.x, this.game.ball.y, 25, "#33363f")
             this.drawer.Circle(this.game.ball.x, this.game.ball.y, 20, "#dddedf")
+
+            for(let i = 0; i < this.game.ball.coins.length; i++){
+                this.drawer.Circle(this.game.ball.coins[i].x, this.game.ball.coins[i].y, 15, "#33363f")
+                this.drawer.Circle(this.game.ball.coins[i].x, this.game.ball.coins[i].y, 10, "#dfdf8d")
+            }
+
+            this.drawer.Text(`${this.game.vars.score}`, 50, 100)
             ctx.translate(this.game.player.x, this.game.player.y)
             ctx.rotate(-this.game.player.diffX / 900)
             this.drawer.Bean(20, 0, 200, 50, "#afbfaf", "H")

@@ -19,6 +19,7 @@ function Tick(){
 
     if(game.key.wasKeyJustPressed("KeyW")){
         game.vars.title = false
+        game.vars.score = 0
     }
 
     requestAnimationFrame(Tick)

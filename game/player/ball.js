@@ -7,7 +7,7 @@ export class Ball{
     velY = 0
     coins = 0
     coinTime = 0
-    coinTimeLimit = 1000
+    coinTimeLimit = 100
     game
     player
     coins = []
@@ -24,7 +24,8 @@ export class Ball{
         this.colide()
         this.coinTime++
         if(this.coinTime == this.coinTimeLimit){
-
+            this.coinTime = 0
+            this.coins[this.coins.length] = new Coin()
         }
     }
     colide(){
@@ -41,6 +42,18 @@ export class Ball{
             this.velX = 0
             this.velY = 0
             this.game.vars.title = true
+            if(this.game.vars.score > this.game.vars.highScore){
+                this.game.vars.highScore = this.game.vars.score
+            }
+            this.coins = []
+        }
+
+        for(let i = 0; i < this.coins.length; i++){
+            if (Math.hypot(this.x - this.coins[i].x, this.y - this.coins[i].y) <= 25 + 15) {
+                this.coins.splice(i,1)
+                this.game.vars.score++
+                console.log(this.game.vars.score)
+            }
         }
     }
 }
