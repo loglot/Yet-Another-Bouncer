@@ -24,7 +24,8 @@ export class Display {
             this.drawer.Text("Yet Another Bouncer", 250, 200)
             this.drawer.Text("Press W To Start", 260, 350)
         } else {
-            this.drawer.Circle(this.game.ball.x, this.game.ball.y, 20, "white")
+            this.drawer.Circle(this.game.ball.x, this.game.ball.y, 25, "#33363f")
+            this.drawer.Circle(this.game.ball.x, this.game.ball.y, 20, "#dddedf")
             ctx.translate(this.game.player.x, this.game.player.y)
             ctx.rotate(-this.game.player.diffX / 900)
             this.drawer.Bean(20, 0, 200, 50, "#afbfaf", "H")
