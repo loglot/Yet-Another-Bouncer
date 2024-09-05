@@ -1,10 +1,16 @@
+import { Coin } from "./coins.js"
+
 export class Ball{
     x = 838
     y = 0
     velX = 0
     velY = 0
+    coins = 0
+    coinTime = 0
+    coinTimeLimit = 1000
     game
     player
+    coins = []
 
     constructor(Game){
         this.game = Game
@@ -16,6 +22,10 @@ export class Ball{
         this.x += this.velX
         this.y += this.velY
         this.colide()
+        this.coinTime++
+        if(this.coinTime == this.coinTimeLimit){
+
+        }
     }
     colide(){
         if(this.y > 750 && (this.x > this.player.x - 120 && this.x < this.player.x + 120) && this.y < 800){
