@@ -35,7 +35,6 @@ export class Ball{
     colider(){
         if(this.checkCollision({x:this.player.x+7,y:this.player.y,width:230,height:50,rotation:this.player.rotation})){
 
-            this.y = 750
             this.velY = Math.max(-15 - Math.abs(this.player.diffX/20), -35)
             this.velX = Math.max(Math.min(-this.player.diffX / 7, 25), -25)
         }if(this.x < 40 || this.x > 1636){
