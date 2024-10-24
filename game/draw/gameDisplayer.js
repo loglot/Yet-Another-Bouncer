@@ -50,8 +50,8 @@ export class Display {
         var currentHeight = canvas.height;
   
         // Get the current window dimensions
-        var windowWidth = window.innerWidth;
-        var windowHeight = window.innerHeight;
+        var windowWidth = window.innerWidth-50;
+        var windowHeight = window.innerHeight-50;
     
         // Calculate the desired width and height based on the window's dimensions
         
