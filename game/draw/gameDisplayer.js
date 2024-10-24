@@ -38,7 +38,10 @@ export class Display {
             this.drawer.Text(`${this.game.vars.score}`, 50, 100)
             ctx.translate(this.game.player.x, this.game.player.y)
             ctx.rotate(-this.game.player.diffX / 900)
+            this.game.player.rotation = -this.game.player.diffX / 900
             this.drawer.Bean(20, 0, 200, 50, "#afbfaf", "H")
+            ctx.rotate(this.game.player.diffX / 900)
+            ctx.translate(-this.game.player.x, -this.game.player.y)
         }
 
     }

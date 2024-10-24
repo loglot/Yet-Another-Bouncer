@@ -3,6 +3,7 @@ export class Player{
     diffX = 0
     y=800
     game
+    rotation = 0
 
     constructor(Game){
         this.game = Game

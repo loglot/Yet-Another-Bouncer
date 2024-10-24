@@ -7,6 +7,8 @@ function Start(){
 Tick()
 }
 function Tick(){
+    game.key.update()
+    game.display.draw()
     if(game.vars.title){
 
     } else {
@@ -14,8 +16,6 @@ function Tick(){
         game.ball.update()
     }
     
-    game.key.update()
-    game.display.draw()
 
     if(game.key.wasKeyJustPressed("KeyW")){
         game.vars.title = false
